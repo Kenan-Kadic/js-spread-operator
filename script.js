@@ -27,3 +27,29 @@ const restaurant = {
     },
   },
 };
+
+// JS SPREAD OPERATOR
+
+// What if you have an array, and what to add more items to the front
+// Here is the old way of doing it
+
+const arr = [7, 8, 9];
+const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArray);
+
+// THE NEW WAY OF DOING IT --
+// ... means write them all out
+
+//note that all elements are taken out of the array
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+// LOOK HOW SPREAD OPERATOR TAKES INDIVIDUAL ELEMENTS OUT OF ARRAY
+console.log(...newArr);
+
+// HOW TO PRINT THE MAINMENU WITH GONOCCI ADDED AT THE END
+// remember we are creating a brand new array here
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
