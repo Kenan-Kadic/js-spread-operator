@@ -82,13 +82,13 @@ console.log(letters);
 
 // HOW TO USE SPREAD OPERATOR IN FUNCTIONS --- made orderPasta function
 
-// const ingredients =
-//     [prompt("Let's make pasta! Ingredient 1?"),
-//     prompt('Ingredient 2?'),
-//     prompt('Ingredient 3?'),
-//     ]
-//
-// console.log(ingredients)
+const ingredients =
+    ['ingredient one',
+    'ingredient two',
+    'ingredient three',
+    ]
+
+console.log(ingredients)
 
 // THIS IS ES6 - 2015
 
