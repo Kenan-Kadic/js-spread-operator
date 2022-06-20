@@ -26,6 +26,10 @@ const restaurant = {
       close: 24,
     },
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`)
+  }
 };
 
 // JS SPREAD OPERATOR
@@ -52,4 +56,55 @@ console.log(...newArr);
 
 const newMenu = [...restaurant.mainMenu, 'Gnocci'];
 console.log(newMenu);
+
+// YOU CAN ONLY USE ... WHERE YOU WOULD NORMALLY HAVE VALUES SEPARATED BY COMMAS
+
+// HOW TO CREATE SHALLOW COPIES OF ARRAYS
+
+// Copy
+const mainMenuCopy =[...restaurant.mainMenu];
+
+// HOW TO JOIN 2 ARRAY
+
+const theNewMenu = [...restaurant.mainMenu, ...restaurant.starterMenu]
+
+// ES6 SPREAD OPERATOR WORKS ON ALL ITTERABLES
+// ITTERABLES - ALL ARRAYS, STRINGS, MAPS, OR SETS -- BUT NOT OBJECTS
+
+// It works because this is a place where you would normally have values separated by commas
+const str = 'Jonas';
+const letters = [...str, '', 'S.']
+// it spells out Jonas letter by letter
+console.log(letters);
+
+// SPREAD OPERATOR ONLY WORKS WHEN BUILDING AN ARRAY OR WHEN PASSING VALUES INTO A FUNCTION
+// THEY DO NOT WORK IN TEMPLATE LITERALS
+
+// HOW TO USE SPREAD OPERATOR IN FUNCTIONS --- made orderPasta function
+
+// const ingredients =
+//     [prompt("Let's make pasta! Ingredient 1?"),
+//     prompt('Ingredient 2?'),
+//     prompt('Ingredient 3?'),
+//     ]
+//
+// console.log(ingredients)
+
+// THIS IS ES6 - 2015
+
+// the old way
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2])
+// the new way (ES6)
+restaurant.orderPasta(...ingredients)
+
+// ES9 OR ES2018 CAN DO SPREAD OPERATOR ON OBJECTS
+
+const newRestaurant = {foundedIn: 1998 ,...restaurant, founder: 'Guiseppe'}
+console.log(newRestaurant)
+
+// YOU CAN MAKE EASY COPIES OF THINGS and they are real SHADOW COPIES refering to a different SLOT in
+// in the HEAP MEMORY
+
+const restaurantCopy = {...restaurant};
+restaurantCopy.name = 'Ristorante Roma'
 
